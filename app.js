@@ -27,6 +27,7 @@
     swig.setDefaults({cache:false});
     
     //  bodyparse设置
+    app.use(bodyParser.json());
     app.use( bodyParser.urlencoded({extended:true}));
     app.use(session({
         cookieName: 'session',
@@ -50,7 +51,7 @@
     //     next();
     // });
     app.use(function (req, res, next) {
-        console.log(req, res)
+        console.log(req)
         // res.send(JSON.stringify(req))
         // res.end()
         console.log('Time: %d', Date.now());

@@ -34,3 +34,21 @@ form div {
 form button {
   width: 50px;
 }
+.email-wrong, .email-right {
+  display: none;
+}
+.email-wrong {
+  color: red;
+}
+.email-right {
+  color: green;
+}
+#email:focus:invalid ~ .email-wrong {
+  display: inline-block;
+}
+/* #email:invalid ~ .email-wrong {
+  display: inline-block;
+} */
+#email:valid ~ .email-right {
+  display: inline-block;
+}

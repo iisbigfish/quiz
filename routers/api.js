@@ -77,7 +77,7 @@ router.post('/user/register',function (req,res) {
 
 // 用户登录
 router.post('/user/login',function (req,res) {
-    // console.log(req.body);
+    console.log(req.body, '/user/login');
     var username = req.body.username;
     var password = req.body.password;
 
@@ -99,10 +99,7 @@ router.post('/user/login',function (req,res) {
                 _id: doc._id,
                 username: doc.username
             };
-            req.cookies.set('userInfo',JSON.stringify({
-                _id: doc._id,
-                username: doc.username
-            }));
+            req.session.userInfo = username
             res.json(responseData);
             return
         }

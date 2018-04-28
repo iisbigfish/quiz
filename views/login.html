@@ -23,17 +23,19 @@
   </header>
   <section>
     <h3>Login Info</h3>
-    <form action="" method="post">
+    <form>
       <div>
         <label for="email">email</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="username" name="username" required>
+        <span class="email-wrong">email invalid</span>
+        <span class="email-right">email valid</span>
       </div>
       <div>
         <label for="password">password</label>
-        <input type="password" id="password" name="password">
+        <input type="password" id="password" name="password" required>
       </div>
       <div>
-        <button type="submit">提交</button>
+        <button type="submit" id="submit">提交</button>
         <a href="/register">need Account?</a>
       </div>
     </form>
@@ -41,6 +43,7 @@
   <footer>
     &copy;2018.4 blues
   </footer>
+  <script src="../public/js/login.js"></script>
 </body>
 
 </html>

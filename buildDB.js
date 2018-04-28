@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost:27017/quiz',function (err) {
   }
 });
 
-var fir = new User({username: 'admin', password: 'admin'})
+var fir = new User({username: 'admin@qq.com', password: 'admin'})
 
 fir.save(err => {
   if (err) console.log(err)
