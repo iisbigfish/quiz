@@ -4,20 +4,6 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "_bson@1.0.6@bson": "^1.0.6",
-    "_mongodb-core@3.0.7@mongodb-core": "^3.0.7",
-    "_mongodb@3.0.7@mongodb": "^3.0.7",
-    "_require_optional@1.0.1@require_optional": "^1.0.1",
-    "_resolve-from@2.0.0@resolve-from": "^2.0.0",
-    "_semver@5.5.0@semver": "^5.5.0",
-    "bson": "^1.0.6",
-    "mongodb": "^3.0.7",
-    "mongodb-core": "^3.0.7",
-    "require_optional": "^1.0.1",
-    "resolve-from": "^2.0.0",
-    "semver": "^5.5.0"
-  },
-  "devDependencies": {
     "body-parser": "^1.17.2",
     "cookies": "^0.7.0",
     "express": "^4.15.3",

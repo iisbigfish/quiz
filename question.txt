@@ -1,0 +1,7 @@
+How to prevent guests from browsing the list of questions || A: hjkh,B:hjkuiy,C:jklsq,D:iopip||A
+Q2A Sites Listing wrong values || A: ff,B:hjkuiy,C:jklsq,D:iopip||B
+Columns on Tags page ... no change || A: gg,B:gg,C:jklsq,D:iopip||C
+how to Register a user || A: hhhjkh,B:hjhhkuiy,C:jklsq,D:iopip||D
+Sort questions by oldest || A: hjjjkh,B:h,C:jklsq,D:iopip||A
+Muffin Theme Version 1.2 is here! || A: hjjkkkh,B:hjjjkuiy,C:jklsq,D:iopip||C
+Adding Links on Login and Register pages to Version other || A: hjllkh,B:ll,C:jklsq,D:iopip||C
