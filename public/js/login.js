@@ -6,18 +6,18 @@ button.addEventListener('click', submit)
 function submit(e) {
   e.preventDefault()
 
-  var email = document.querySelector('#username').value
+  var username = document.querySelector('#username').value
   var password = document.querySelector('#password').value
-  console.log(email, password)
-  if (email.trim() && password.trim()) {
-    login(email, password)
+  console.log(username, password)
+  if (username.trim() && password.trim()) {
+    login(username, password)
   }
 }
 
-function login (email, password) {
+function login (username, password) {
   fetch('/api/user/login', {
     body: JSON.stringify({
-      username: email,
+      username: username,
       password: password
     }),
     method: 'POST',
@@ -26,6 +26,16 @@ function login (email, password) {
       'content-type': 'application/json'
     },
   }).then(res => {
-    console.log(res)
+    res.json().then(res => {
+      console.log(res)
+      if (res.code === 4) {
+        alert(res.message)
+        localStorage.setItem('username', res.userInfo.username)
+        console.log('1111')
+        window.location.replace('/search')
+      } else {
+        alert(res.message)        
+      }
+    })
   })
 }

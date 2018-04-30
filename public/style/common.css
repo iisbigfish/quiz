@@ -52,3 +52,6 @@ form button {
 #email:valid ~ .email-right {
   display: inline-block;
 }
+.username {
+  display: none;
+}

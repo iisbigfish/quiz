@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/style/search.css">
+    <link rel="stylesheet" href="../public/style/common.css">
+    <title>search</title>
+</head>
+
+<body>
+    <header>
+        <a href="/">
+            <img src="../public/images/G.PNG" alt="LOGO">
+            <span>TESTLAB</span>
+        </a>
+        <div class="login">
+            <a href="/login">登入</a>
+            <a href="/register">注册</a>
+        </div>
+        <div class="username">
+            <span>用户名</span>
+            <a class="loginout" href="/loginout">退出</a>
+        </div>
+    </header>
+    <section class="upload-c">
+        <textarea name="questions" id="questions" cols="30" rows="10">
+                asaasdfs||A:aa,B:ass,C:ccc,D: ddd ||A
+                aasdfs||A:aa,B:ass,C:ccc,D: ddd ||A
+                aasdfs||A:aa,B:ass,C:ccc,D: ddd ||A
+        </textarea>
+        <pre>格式为： question || answer option|| answer
+            如要一次性插入多条，请回车换行
+        </pre>
+        <div class="button upload">上传自定义问题</div>
+    </section>
+    <section>
+        <textarea name="search-word" id="" cols="30" rows="10" placeholder="pleacse input keyword">
+            
+        </textarea>
+        <div class="button go">go</div>
+        <div class="button clear">clear results</div>
+    </section>
+    <section class="search-content">
+
+    </section>
+    <footer>
+        &copy;2018.4 blues
+    </footer>
+  <script src="../public/js/common.js"></script>
+    <script src="../public/js/search.js"></script>
+</body>
+</html>

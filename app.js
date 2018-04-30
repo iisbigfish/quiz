@@ -29,38 +29,31 @@
     //  bodyparse设置
     app.use(bodyParser.json());
     app.use( bodyParser.urlencoded({extended:true}));
+
     app.use(session({
         cookieName: 'session',
-        secret: 'random_string_goes_here',
+        secret: 'saghjkagwaui',
         duration: 30 * 60 * 1000,
-        activeDuration: 5 * 60 * 1000,
+        activeDuration: 50 * 60 * 1000,
     }));
-    // Cookies设置
-    // app.use( function (req,res,next) {
-    //     // 创建一个cookies对象
-    //     req.cookies = new Cookies(req,res);
-    
-    //     // 解析登录用户的cookies信息
-    //     if(req.cookies.get('userInfo')){
-    //         try{
-    //             req.userInfo = JSON.parse(req.cookies.get('userInfo'))
-    //         }catch(e){
-    //             next();
-    //         }
-    //     }
-    //     next();
-    // });
-    app.use(function (req, res, next) {
-        console.log(req)
-        // res.send(JSON.stringify(req))
-        // res.end()
-        console.log('Time: %d', Date.now());
-        next();
-      })
+    // 判断是否有登入
+    app.use( function (req,res,next) {
+        if (req.url == '/search' && !req.session.userInfo) {
+            res.redirect('/')
+            res.end()
+        } else if (req.url === '/loginout') {
+            req.session.reset()
+            res.redirect('/')
+            res.end()
+        } else {
+            next()
+        }
+    });
     // 根据不同功能划分模块
     app.use('/api',require('./routers/api'));
     app.get('/login',require('./routers/login'));
     app.get('/register',require('./routers/register'));
+    app.get('/search',require('./routers/search'));
     app.use('/',require('./routers/main'));
     
     //监听http请求
