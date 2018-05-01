@@ -7,8 +7,10 @@ clear.addEventListener('click', clears)
 upload.addEventListener('click', uploads)
 
 function search (e) {
-    let keyword = document.querySelector('textarea').value
+    let keyword = document.querySelector('.search-word').value
     console.log(keyword)
+    let content = document.querySelector('.search-content')
+    content.innerHTML = ''
     if (!keyword.trim()) {
         alert('请输入问题关键字')
         return
@@ -83,6 +85,7 @@ function uploads (e) {
 }
 
 function judge (txt) {
+    console.log(txt.split('\n'), 'txt')
     return txt.split('\n').every(it => {
         let res = it.match(/\|\|/gi)
         return res && res.length % 2 == 0

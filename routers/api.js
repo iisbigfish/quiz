@@ -104,8 +104,10 @@ router.post('/user/login', function (req, res) {
 });
 // 用户搜索
 router.post('/search', function (req, res) {
-    let keyword = req.body.keyword
-    Question.find().where('question').equals(new RegExp(keyword), 'i').exec((err, data) => {
+    let keyword = new RegExp(req.body.keyword, 'i')
+    console.log(keyword, 'keyword')
+    Question.find({question: keyword}).exec((err, data) => {
+        console.log(data)
         if (data.length) {
             responseData.code = 4;
             responseData.message = true;
@@ -124,7 +126,7 @@ router.post('/search', function (req, res) {
 router.post('/insert', function (req, res) {
     let quest = req.body.questions
     let qm = quest.split('\n')
-        .map(it => it.split('||'))
+        .map(it => it.trim().it.split('||'))
         .map((element, index) => {
             let m = new Question({
                 question: element[0],
